@@ -29,7 +29,10 @@ fs.readFile(inputFile, "utf8", (err, data) => {
   } // If there's an error reading the file, log it and stop the program.
 
   // Convert Markdown content to HTML
-  const htmlContent = md.render(data);
+  let htmlContent = md.render(data);
+
+  htmlContent = htmlContent.replace(/<\/h2>/g, '</h2>\n<hr class="section-divider">');
+  // This replaces closing <h2> tags with a horizontal rule, adding a visual divider between sections.
 
   // Wrap the converted content inside a full HTML page structure
   const fullHtml = `
