@@ -28,7 +28,7 @@ export class JaizelQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'A JavaScript runtime environment'],
         [AnswerChoice.D, 'A JavaScript framework like React or Angular'],
       ]),
-      AnswerChoice.A,
+      AnswerChoice.UNANSWERED,
     );
   }
 
@@ -42,7 +42,7 @@ export class JaizelQuiz implements QuizQuestionProvider {
         [AnswerChoice.C, 'const x = 10;'],
         [AnswerChoice.D, 'static x = 10;'],
       ]),
-      AnswerChoice.D,
+      AnswerChoice.UNANSWERED,
     );
   }
 
