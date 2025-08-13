@@ -47,10 +47,16 @@ export class JaizelQuiz implements QuizQuestionProvider {
   }
 
   private static makeQuestion2(): QuizQuestion {
-    return new QuizQuestion(
+    return new MultipleChoiceQuizQuestion(
       2,
-      'What is an Interface in TypeScript and how does it differ from a Type?',
-      'An Interface in TypeScript is a way to define a contract for object structure, primarily used for object type checking.' // Providing the actual answer
+      'What is an Interface in TypeScript?',
+      new Map<AnswerChoice, string>([
+        [AnswerChoice.A, 'A way to define a contract for object structure'],
+        [AnswerChoice.B, 'A tool for bundling TypeScript code'],
+        [AnswerChoice.C, 'A special type of JavaScript class'],
+        [AnswerChoice.D, 'A method for importing external modules'],
+      ]),
+      AnswerChoice.UNANSWERED,
     );
   }
 }

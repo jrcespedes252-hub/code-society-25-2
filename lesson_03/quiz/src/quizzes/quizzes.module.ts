@@ -6,11 +6,7 @@ export const Quizzes = Symbol.for('Quizzes');
 
 // Add your quiz provider here.
 
-const QUIZ_PROVIDERS = [
-  AnthonyMaysQuiz,
-  AnotherQuiz,
-  JaizelQuiz,
-];
+const QUIZ_PROVIDERS = [AnthonyMaysQuiz, AnotherQuiz, JaizelQuiz];
 
 @Module({
   providers: [
