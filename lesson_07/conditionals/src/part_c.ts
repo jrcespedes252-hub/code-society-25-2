@@ -6,7 +6,26 @@
  * @returns
  */
 export function isStrongPassword(password: string): boolean {
-  return false;
+  // Check if password has at least 8 characters
+  if (password.length < 8) {
+    return false;
+  }
+  
+  // Check if password has at least one uppercase letter
+  let hasUppercase = false;
+  // Check if password has at least one digit
+  let hasDigit = false;
+  
+  for (const char of password) {
+    if (char >= 'A' && char <= 'Z') {
+      hasUppercase = true;
+    }
+    if (char >= '0' && char <= '9') {
+      hasDigit = true;
+    }
+  }
+  
+  return hasUppercase && hasDigit;
 }
 
 /**
@@ -16,7 +35,24 @@ export function isStrongPassword(password: string): boolean {
  * @returns
  */
 export function getDayOfWeek(day: number): string {
-  return "";
+  switch (day) {
+    case 0:
+      return "Sunday";
+    case 1:
+      return "Monday";
+    case 2:
+      return "Tuesday";
+    case 3:
+      return "Wednesday";
+    case 4:
+      return "Thursday";
+    case 5:
+      return "Friday";
+    case 6:
+      return "Saturday";
+    default:
+      return "";
+  }
 }
 
 /**
@@ -31,5 +67,14 @@ export function getDayOfWeek(day: number): string {
  * @returns
  */
 export function getTicketPrice(age: number): number {
-  return 0;
+  if (age < 5) {
+    return 0; // Free for children under 5
+  } else if (age >= 5 && age <= 17) {
+    return 10; // Children between 5 and 17
+  } else if (age >= 18 && age <= 59) {
+    return 20; // Adults between 18 and 59
+  } else if (age >= 60) {
+    return 15; // Seniors 60 and older
+  }
+  return 0; // Default case (shouldn't reach here)
 }
